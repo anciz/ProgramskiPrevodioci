@@ -49,7 +49,8 @@ extern int yydebug;
     CAPITAL_WORD = 259,
     WORD = 260,
     UPITNIK = 261,
-    UZVICNIK = 262
+    UZVICNIK = 262,
+    ZAREZ = 263
   };
 #endif
 

@@ -14,7 +14,7 @@
 %token  WORD
 %token UPITNIK
 %token UZVICNIK
-
+%token ZAREZ
 %%
 
 text 
@@ -26,11 +26,14 @@ sentence
   : words DOT     {brojacTacka++;}
   | words UPITNIK {brojacUpitnik++;}
   | words UZVICNIK {brojacUzvicnik++;}
+  
   ;
 
 words 
   : CAPITAL_WORD
   | words WORD
+  | words ZAREZ WORD
+  | words ZAREZ CAPITAL_WORD
   | words CAPITAL_WORD    
   ;
 
