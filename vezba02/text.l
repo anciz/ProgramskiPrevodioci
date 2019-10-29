@@ -8,6 +8,9 @@
 [ \t\n]+    { /* skip */ }
 
 "."         { return DOT; }
+"?"         {return UPITNIK;}
+"!"         {return UZVICNIK;}
+
 [A-Z][a-z]* { return CAPITAL_WORD; }
 [a-z]+      { return WORD; }
                      
