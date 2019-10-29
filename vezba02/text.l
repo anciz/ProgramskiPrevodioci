@@ -5,12 +5,14 @@
 
 %%
 
-[ \t\n]+    { /* skip */ }
+[ \t]+    { /* skip */ }
 
 "."         { return DOT; }
 "?"         {return UPITNIK;}
 "!"         {return UZVICNIK;}
 ","         {return ZAREZ;}
+\n+          { return NOVIRED; }
+
 [A-Z][a-z]* { return CAPITAL_WORD; }
 [a-z]+      { return WORD; }
                      

@@ -50,7 +50,8 @@ extern int yydebug;
     WORD = 260,
     UPITNIK = 261,
     UZVICNIK = 262,
-    ZAREZ = 263
+    ZAREZ = 263,
+    NOVIRED = 264
   };
 #endif
 

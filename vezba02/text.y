@@ -7,6 +7,7 @@
   int brojacTacka=0;
   int brojacUpitnik=0;
   int brojacUzvicnik=0;
+	int brojacPasusa=0;
 %}
 
 %token  DOT
@@ -15,13 +16,21 @@
 %token UPITNIK
 %token UZVICNIK
 %token ZAREZ
+%token NOVIRED
+
 %%
 
 text 
-  : sentence
-  | text sentence
-  ;
-          
+  : pasus NOVIRED { brojacPasusa++;}
+  | text pasus NOVIRED {brojacPasusa++;}
+	| NOVIRED {brojacPasusa++;}
+	;
+
+pasus
+	: sentence 
+	| pasus sentence 
+	;
+
 sentence 
   : words DOT     {brojacTacka++;}
   | words UPITNIK {brojacUpitnik++;}
@@ -44,6 +53,8 @@ int main() {
   printf("\nBroj obavestajnih :%d",brojacTacka);
   printf("\nBroj upitnih :%d",brojacUpitnik);
   printf("\nBroj uzvicnih :%d",brojacUzvicnik);
+  printf("\nBroj pasusa :%d \n",brojacPasusa);
+
 
 }
 
